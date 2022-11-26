@@ -5,6 +5,7 @@ const { FieldValue } = require('firebase-admin/firestore');
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.use(require('./route/auth'));
 const userRef = db.collection('Users');
 const citiesRef = db.collection('cities');
 app.post('/', async (req, res) => {
